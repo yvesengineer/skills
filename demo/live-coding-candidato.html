@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Live Coding Backend | Guia do Candidato</title>
+    <link rel="stylesheet" href="./guide.css" />
+  </head>
+  <body class="guide-page candidate-page">
+    <header class="site-header">
+      <a class="brand-lockup" href="./index.html" aria-label="Voltar para a apresentação">
+        <img src="./Itaú_Unibanco_logo_2023.svg.png" alt="Itaú" />
+        <span>
+          <small>Live Coding Backend</small>
+          <strong>Guia do Candidato</strong>
+        </span>
+      </a>
+      <nav class="header-actions" aria-label="Ações da página">
+        <a class="ghost-button" href="#checklist">Checklist final</a>
+        <button class="icon-button" type="button" data-action="toggle-nav" aria-label="Abrir navegação">☰</button>
+      </nav>
+    </header>
+
+    <main class="guide-shell">
+      <aside class="side-nav" data-nav>
+        <div class="side-nav-inner">
+          <span class="nav-kicker">Nesta página</span>
+          <a href="#contexto">Contexto</a>
+          <a href="#objetivo">Objetivo</a>
+          <a href="#funcionalidades">Funcionalidades</a>
+          <a href="#regras">Regras de negócio</a>
+          <a href="#liberdade">Liberdade técnica</a>
+          <a href="#avaliacao">O que será avaliado</a>
+          <a href="#tempo">Tempo</a>
+          <a href="#exemplos">Exemplos JSON</a>
+          <a href="#checklist">Checklist final</a>
+        </div>
+      </aside>
+
+      <article class="document">
+        <section class="hero-section" id="topo">
+          <div class="hero-copy">
+            <span class="eyebrow">Case de negócio</span>
+            <h1>Plataforma de Reservas de Experiências</h1>
+            <p>
+              Construa uma API backend para clientes navegarem por experiências com vagas limitadas,
+              criarem reservas, consultarem reservas, cancelarem quando permitido e simularem pagamento.
+            </p>
+            <div class="hero-actions" aria-label="Atalhos principais">
+              <a class="primary-button" href="#objetivo">Começar leitura</a>
+              <a class="secondary-button" href="#exemplos">Ver exemplos</a>
+            </div>
+          </div>
+          <div class="summary-panel" aria-label="Resumo do desafio">
+            <span class="panel-label">Resumo rápido</span>
+            <dl class="meta-grid">
+              <div>
+                <dt>Formato</dt>
+                <dd>Live coding com AI liberada</dd>
+              </div>
+              <div>
+                <dt>Duração</dt>
+                <dd>60 a 90 minutos</dd>
+              </div>
+              <div>
+                <dt>Entrega</dt>
+                <dd>API backend funcional e explicável</dd>
+              </div>
+              <div>
+                <dt>Foco</dt>
+                <dd>Decisões técnicas, domínio e priorização</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="content-section" id="contexto">
+          <div class="section-heading">
+            <span class="eyebrow dark">Contexto</span>
+            <h2>Você foi chamado para construir o backend de uma plataforma de reservas.</h2>
+          </div>
+          <p>
+            A plataforma permite que clientes reservem experiências com vagas limitadas, como aula de surf,
+            passeio de barco, workshop de culinária, tour guiado, day use em hotel e evento presencial.
+          </p>
+          <div class="feature-grid">
+            <article class="mini-card">
+              <strong>Experiência</strong>
+              <span>Nome, descrição, preço, data e horário.</span>
+            </article>
+            <article class="mini-card">
+              <strong>Disponibilidade</strong>
+              <span>Quantidade de vagas disponíveis por experiência.</span>
+            </article>
+            <article class="mini-card">
+              <strong>Reserva</strong>
+              <span>Relação entre cliente, experiência e estado da solicitação.</span>
+            </article>
+            <article class="mini-card">
+              <strong>Pagamento</strong>
+              <span>Simulação de uma etapa financeira para concluir ou recusar uma reserva.</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" id="objetivo">
+          <div class="section-heading">
+            <span class="eyebrow dark">Objetivo</span>
+            <h2>Construa a melhor solução possível dentro do tempo disponível.</h2>
+          </div>
+          <p>
+            Você pode usar qualquer linguagem, framework, banco de dados, biblioteca, documentação,
+            ferramenta de AI, IDE agentica ou recurso que preferir. O objetivo não é apenas terminar tudo,
+            mas demonstrar como você pensa, prioriza, usa ferramentas e explica decisões.
+          </p>
+          <blockquote class="callout">
+            Prefira entregar uma solução menor, funcional e bem pensada do que tentar implementar tudo de
+            forma superficial.
+          </blockquote>
+        </section>
+
+        <section class="content-section" id="funcionalidades">
+          <div class="section-heading">
+            <span class="eyebrow dark">Funcionalidades esperadas</span>
+            <h2>A solução deve permitir, no mínimo, o fluxo principal de reserva.</h2>
+          </div>
+          <ol class="number-list">
+            <li>Listar experiências disponíveis.</li>
+            <li>Consultar detalhes de uma experiência.</li>
+            <li>Criar uma reserva para uma experiência.</li>
+            <li>Consultar uma reserva.</li>
+            <li>Cancelar uma reserva.</li>
+            <li>Simular o pagamento de uma reserva.</li>
+          </ol>
+        </section>
+
+        <section class="content-section" id="regras">
+          <div class="section-heading">
+            <span class="eyebrow dark">Regras de negócio</span>
+            <h2>O domínio tem decisões importantes, mesmo sendo um exercício curto.</h2>
+          </div>
+          <div class="rule-list">
+            <article>
+              <strong>Vagas limitadas</strong>
+              <p>Uma experiência possui quantidade limitada de vagas. Não deve ser possível reservar uma experiência sem disponibilidade.</p>
+            </article>
+            <article>
+              <strong>Associação obrigatória</strong>
+              <p>Uma reserva deve estar associada a um cliente e a uma experiência.</p>
+            </article>
+            <article>
+              <strong>Estados da reserva</strong>
+              <p>Uma reserva pode ter diferentes estados, de acordo com as decisões que você tomar para o domínio.</p>
+            </article>
+            <article>
+              <strong>Pagamento simulado</strong>
+              <p>O pagamento pode ser simulado da forma que você considerar adequada.</p>
+            </article>
+            <article>
+              <strong>Cancelamento</strong>
+              <p>O cancelamento só deve ser permitido quando fizer sentido para as regras que você definir.</p>
+            </article>
+            <article>
+              <strong>Premissas adicionais</strong>
+              <p>Você pode assumir regras adicionais, desde que consiga explicá-las depois.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" id="liberdade">
+          <div class="section-heading">
+            <span class="eyebrow dark">Liberdade técnica</span>
+            <h2>As escolhas de solução fazem parte da avaliação.</h2>
+          </div>
+          <div class="split-list">
+            <ul>
+              <li>Quais endpoints criar.</li>
+              <li>Como modelar os dados.</li>
+              <li>Como organizar o código.</li>
+              <li>Como armazenar as informações.</li>
+            </ul>
+            <ul>
+              <li>Como representar estados da reserva.</li>
+              <li>Como simular pagamento.</li>
+              <li>Quais validações implementar.</li>
+              <li>Quais testes escrever e limitações assumir.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section" id="avaliacao">
+          <div class="section-heading">
+            <span class="eyebrow dark">O que será avaliado</span>
+            <h2>Será avaliado tanto o resultado quanto o processo.</h2>
+          </div>
+          <p>
+            A avaliação considera como você entende o problema, prioriza, modela o domínio, desenha a API,
+            organiza o código, lida com persistência, validações, erros, consistência, testes, comunicação
+            e uso de AI.
+          </p>
+          <div class="pill-cloud" aria-label="Dimensões avaliadas">
+            <span>Entendimento do problema</span>
+            <span>Priorização</span>
+            <span>Modelagem de domínio</span>
+            <span>Contrato HTTP</span>
+            <span>Consistência de dados</span>
+            <span>Concorrência</span>
+            <span>Pagamento</span>
+            <span>Cancelamento</span>
+            <span>Validações</span>
+            <span>Testes</span>
+            <span>Comunicação</span>
+            <span>Uso de AI</span>
+          </div>
+          <p>
+            Ao final, você deverá apresentar sua solução explicando o que foi implementado, como modelou o
+            domínio, quais decisões técnicas tomou, quais regras assumiu, o que ficou de fora e o que faria
+            diferente com mais tempo.
+          </p>
+        </section>
+
+        <section class="content-section" id="tempo">
+          <div class="section-heading">
+            <span class="eyebrow dark">Tempo sugerido</span>
+            <h2>Você terá entre 60 e 90 minutos.</h2>
+          </div>
+          <div class="timeline">
+            <article>
+              <span>1</span>
+              <strong>Entenda e recorte</strong>
+              <p>Faça perguntas, assuma premissas e defina um MVP viável.</p>
+            </article>
+            <article>
+              <span>2</span>
+              <strong>Implemente o fluxo central</strong>
+              <p>Liste experiências, crie reserva, consulte, cancele e simule pagamento.</p>
+            </article>
+            <article>
+              <span>3</span>
+              <strong>Prove e explique</strong>
+              <p>Rode a solução, mostre testes ou evidências e explique trade-offs.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" id="exemplos">
+          <div class="section-heading">
+            <span class="eyebrow dark">Exemplos JSON</span>
+            <h2>Você pode usar dados fictícios como ponto de partida.</h2>
+          </div>
+          <div class="code-grid">
+            <figure class="code-card">
+              <figcaption>Experiência</figcaption>
+              <pre><code>{
+  "id": "exp_001",
+  "name": "Aula de Surf para Iniciantes",
+  "description": "Aula prática de surf com instrutor na Praia do Tombo.",
+  "price": 15000,
+  "startsAt": "2026-06-10T09:00:00",
+  "capacity": 5
+}</code></pre>
+            </figure>
+            <figure class="code-card">
+              <figcaption>Criar reserva</figcaption>
+              <pre><code>{
+  "customerId": "cus_123",
+  "experienceId": "exp_001"
+}</code></pre>
+            </figure>
+            <figure class="code-card">
+              <figcaption>Simular pagamento</figcaption>
+              <pre><code>{
+  "reservationId": "res_123",
+  "paymentMethod": "credit_card"
+}</code></pre>
+            </figure>
+          </div>
+        </section>
+
+        <section class="content-section final-section" id="checklist">
+          <div class="section-heading">
+            <span class="eyebrow dark">Checklist final</span>
+            <h2>Use estes pontos para guiar sua apresentação final.</h2>
+          </div>
+          <div class="checklist" data-checklist="candidate-final">
+            <label><input type="checkbox" /> Mostrei o que foi implementado.</label>
+            <label><input type="checkbox" /> Expliquei como modelei experiência, reserva e pagamento.</label>
+            <label><input type="checkbox" /> Expliquei as regras de negócio assumidas.</label>
+            <label><input type="checkbox" /> Mostrei como tratei ausência de vagas e estados inválidos.</label>
+            <label><input type="checkbox" /> Mostrei evidências de funcionamento, testes ou chamadas da API.</label>
+            <label><input type="checkbox" /> Falei claramente o que ficou de fora por tempo.</label>
+            <label><input type="checkbox" /> Expliquei o que evoluiria em uma solução de produção.</label>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <script src="./guide.js"></script>
+  </body>
+</html>

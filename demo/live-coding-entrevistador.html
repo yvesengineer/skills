@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Live Coding Backend | Guia do Entrevistador</title>
+    <link rel="stylesheet" href="./guide.css" />
+  </head>
+  <body class="guide-page interviewer-page">
+    <header class="site-header">
+      <a class="brand-lockup" href="./index.html" aria-label="Voltar para a apresentação">
+        <img src="./Itaú_Unibanco_logo_2023.svg.png" alt="Itaú" />
+        <span>
+          <small>Live Coding Backend</small>
+          <strong>Guia do Entrevistador</strong>
+        </span>
+      </a>
+      <nav class="header-actions" aria-label="Ações da página">
+        <a class="ghost-button" href="./live-coding-candidato.html">Abrir guia do candidato</a>
+        <button class="secondary-button compact" type="button" data-action="screen-mode" aria-pressed="false">
+          Modo compartilhar tela
+        </button>
+        <button class="icon-button" type="button" data-action="toggle-nav" aria-label="Abrir navegação">☰</button>
+      </nav>
+    </header>
+
+    <main class="guide-shell">
+      <aside class="side-nav" data-nav>
+        <div class="side-nav-inner">
+          <span class="nav-kicker">Guia interno</span>
+          <a href="#visao">Visão rápida</a>
+          <a href="#roteiro">Roteiro</a>
+          <a href="#dimensoes">Dimensões</a>
+          <a href="#rubrica" data-private>Rubrica</a>
+          <a href="#sinais" data-private>Sinais por nível</a>
+          <a href="#perguntas" data-private>Perguntas</a>
+          <a href="#pontuacao" data-private>Pontuação</a>
+          <a href="#decisao" data-private>Decisão final</a>
+          <a href="#checklist">Checklist</a>
+        </div>
+      </aside>
+
+      <article class="document">
+        <section class="hero-section" id="visao">
+          <div class="hero-copy">
+            <span class="eyebrow">Documento interno</span>
+            <h1>Guia técnico para avaliar o live coding com AI liberada</h1>
+            <p>
+              Use este material para observar processo, decisões, domínio backend, maturidade no uso de AI
+              e capacidade de explicar uma solução de reservas com vagas limitadas.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#roteiro">Ver roteiro</a>
+              <a class="secondary-button" href="#rubrica">Ir para rubrica</a>
+            </div>
+          </div>
+          <div class="summary-panel private-panel" data-private>
+            <span class="panel-label">Atenção</span>
+            <p>
+              Este guia contém critérios de avaliação, sinais de senioridade e pontuação. Ative o modo
+              compartilhar tela antes de exibir a página ao candidato.
+            </p>
+            <dl class="meta-grid">
+              <div>
+                <dt>Tempo</dt>
+                <dd>60 a 90 min</dd>
+              </div>
+              <div>
+                <dt>Pontos</dt>
+                <dd>100</dd>
+              </div>
+              <div>
+                <dt>Mínimo para pleno</dt>
+                <dd>Riscos principais compreendidos</dd>
+              </div>
+              <div>
+                <dt>Uso de AI</dt>
+                <dd>Liberado, mas deve ser explicado</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="content-section" id="roteiro">
+          <div class="section-heading">
+            <span class="eyebrow dark">Roteiro de condução</span>
+            <h2>Observe tanto o código quanto o caminho mental do candidato.</h2>
+          </div>
+          <div class="timeline">
+            <article>
+              <span>1</span>
+              <strong>Abertura</strong>
+              <p>Explique o case, confirme que AI e documentação estão liberadas e peça para pensar em voz alta.</p>
+            </article>
+            <article>
+              <span>2</span>
+              <strong>Execução</strong>
+              <p>Evite guiar demais. Observe perguntas, recorte de escopo, modelagem, testes e uso de ferramentas.</p>
+            </article>
+            <article>
+              <span>3</span>
+              <strong>Debrief técnico</strong>
+              <p>Faça perguntas sobre concorrência, idempotência, pagamento, erros, produção e decisões assumidas.</p>
+            </article>
+          </div>
+          <blockquote class="callout">
+            O objetivo é entender se a AI amplia a capacidade do candidato ou se ele depende dela sem compreensão.
+          </blockquote>
+        </section>
+
+        <section class="content-section" id="dimensoes">
+          <div class="section-heading">
+            <span class="eyebrow dark">Dimensões avaliadas</span>
+            <h2>Principais pontos para observar durante o exercício.</h2>
+          </div>
+          <div class="dimension-grid">
+            <article><strong>Entendimento</strong><span>Perguntas de negócio, ambiguidades e premissas.</span></article>
+            <article><strong>Priorização</strong><span>MVP, cortes de escopo e entrega funcional.</span></article>
+            <article><strong>Domínio</strong><span>Experience, Reservation, Payment, Availability e estados.</span></article>
+            <article><strong>API</strong><span>Endpoints, status HTTP, erros e contrato.</span></article>
+            <article><strong>Consistência</strong><span>Persistência, transações, constraints e concorrência.</span></article>
+            <article><strong>Idempotência</strong><span>Retries, cliques duplicados e pagamentos repetidos.</span></article>
+            <article><strong>Testes</strong><span>Fluxos principais, conflitos, bordas e regressões.</span></article>
+            <article><strong>Produção</strong><span>Observabilidade, segurança, evolução e operação.</span></article>
+            <article><strong>AI</strong><span>Uso crítico, revisão, adaptação e domínio do código gerado.</span></article>
+          </div>
+        </section>
+
+        <section class="content-section private-section" id="rubrica" data-private>
+          <div class="section-heading">
+            <span class="eyebrow dark">Rubrica por dimensão</span>
+            <h2>Use os detalhes para classificar maturidade técnica, não apenas volume de código.</h2>
+          </div>
+
+          <div class="accordion-group">
+            <details class="accordion-card" open>
+              <summary>1. Entendimento do problema e requisitos</summary>
+              <div class="level-table">
+                <article><strong>Júnior</strong><p>Começa rápido, foca em endpoints e fluxo feliz. Pode tratar o desafio como CRUD e precisar de provocação para perceber regras ocultas.</p></article>
+                <article><strong>Pleno</strong><p>Faz perguntas sobre bloqueio de vagas, reserva pendente, cancelamento, preço congelado, duplicidade e estados.</p></article>
+                <article><strong>Sênior</strong><p>Explicita premissas, riscos de produto e operação, alternativas de modelagem e diferença entre MVP e produção.</p></article>
+              </div>
+            </details>
+
+            <details class="accordion-card">
+              <summary>2. Priorização e estratégia de implementação</summary>
+              <div class="level-table">
+                <article><strong>Júnior</strong><p>Tenta implementar tudo ou segue a AI sem recorte. Pode gastar tempo em setup e não concluir o fluxo principal.</p></article>
+                <article><strong>Pleno</strong><p>Começa pelo domínio e endpoints mínimos, entrega fluxo funcional e sabe dizer o que ficou de fora.</p></article>
+                <article><strong>Sênior</strong><p>Define MVP técnico coerente, protege regras críticas, evita overengineering e mantém pontos de extensão claros.</p></article>
+              </div>
+            </details>
+
+            <details class="accordion-card">
+              <summary>3. Modelagem de domínio e estados</summary>
+              <div class="level-table">
+                <article><strong>Júnior</strong><p>Cria Experience e Reservation simples, mistura regra no controller e usa strings soltas para status.</p></article>
+                <article><strong>Pleno</strong><p>Separa entidades principais, define status coerentes e coloca regras em services ou use cases.</p></article>
+                <article><strong>Sênior</strong><p>Define invariantes, transições explícitas, consistência entre reserva e pagamento e alternativas de evolução.</p></article>
+              </div>
+            </details>
+
+            <details class="accordion-card">
+              <summary>4. API, validação e erros</summary>
+              <div class="level-table">
+                <article><strong>Júnior</strong><p>Endpoints funcionais, mas pouco padronizados. Pode retornar 200 para tudo ou vazar erro técnico.</p></article>
+                <article><strong>Pleno</strong><p>Usa endpoints claros, status 201, 400, 404, 409 e 422, valida payloads e diferencia erro de negócio.</p></article>
+                <article><strong>Sênior</strong><p>Pensa em contrato, evolução, OpenAPI, padronização de erro, correlation ID, paginação e compatibilidade.</p></article>
+              </div>
+            </details>
+
+            <details class="accordion-card">
+              <summary>5. Persistência, disponibilidade e concorrência</summary>
+              <div class="level-table">
+                <article><strong>Júnior</strong><p>Verifica vaga antes de salvar, mas pode não perceber corrida entre requisições simultâneas.</p></article>
+                <article><strong>Pleno</strong><p>Reconhece overbooking e propõe transação, lock, constraint, controle otimista ou update condicional.</p></article>
+                <article><strong>Sênior</strong><p>Compara estratégias, considera múltiplas instâncias, isolamento, retry, tabela de vagas e testes concorrentes.</p></article>
+              </div>
+            </details>
+
+            <details class="accordion-card">
+              <summary>6. Idempotência, pagamento e cancelamento</summary>
+              <div class="level-table">
+                <article><strong>Júnior</strong><p>Muda status diretamente, pode criar pagamentos duplicados e permitir transições inválidas.</p></article>
+                <article><strong>Pleno</strong><p>Separa pagamento, entende retries, falhas, cancelamento coerente e pode propor Idempotency-Key.</p></article>
+                <article><strong>Sênior</strong><p>Trata pagamento como integração externa, considera webhook, reconciliação, consistência eventual e reembolso.</p></article>
+              </div>
+            </details>
+
+            <details class="accordion-card">
+              <summary>7. Testes, observabilidade, segurança e produção</summary>
+              <div class="level-table">
+                <article><strong>Júnior</strong><p>Pode testar manualmente ou cobrir apenas fluxo feliz. Cita produção de forma genérica.</p></article>
+                <article><strong>Pleno</strong><p>Cobre fluxos principais, conflitos e erros comuns. Cita logs estruturados, auth, health check e CI.</p></article>
+                <article><strong>Sênior</strong><p>Inclui concorrência, idempotência, tracing, métricas, auditoria, rate limiting, outbox e resiliência.</p></article>
+              </div>
+            </details>
+
+            <details class="accordion-card">
+              <summary>8. Comunicação e uso de AI</summary>
+              <div class="level-table">
+                <article><strong>Júnior</strong><p>Explica o código de forma operacional e pode aceitar sugestões da AI sem revisar.</p></article>
+                <article><strong>Pleno</strong><p>Usa AI para acelerar boilerplate, testes e consultas. Revisa, adapta e explica o que foi gerado.</p></article>
+                <article><strong>Sênior</strong><p>Usa AI como copiloto estratégico, pede alternativas, detecta riscos e mantém controle da arquitetura.</p></article>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="content-section private-section" id="sinais" data-private>
+          <div class="section-heading">
+            <span class="eyebrow dark">Sinais gerais por nível</span>
+            <h2>Classifique pelos padrões observados, não por um único erro isolado.</h2>
+          </div>
+          <div class="signal-grid">
+            <article class="signal-card junior">
+              <span>Júnior</span>
+              <h3>Solução próxima de CRUD</h3>
+              <p>Entrega fluxo feliz, organiza minimamente e aprende quando provocado, mas tende a não antecipar concorrência, duplicidade, estados inválidos ou operação.</p>
+            </article>
+            <article class="signal-card pleno">
+              <span>Pleno</span>
+              <h3>Autonomia com riscos conhecidos</h3>
+              <p>Transforma problema aberto em solução coerente, prioriza bem, reconhece overbooking, idempotência, validação e limitações.</p>
+            </article>
+            <article class="signal-card senior">
+              <span>Sênior</span>
+              <h3>Visão sistêmica e pragmatismo</h3>
+              <p>Antecipa riscos críticos, modela invariantes, pensa em produção e sabe simplificar sem ignorar consistência, segurança e operação.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section private-section" id="perguntas" data-private>
+          <div class="section-heading">
+            <span class="eyebrow dark">Perguntas recomendadas</span>
+            <h2>Use perguntas abertas para revelar raciocínio e trade-offs.</h2>
+          </div>
+          <div class="question-bank">
+            <details class="accordion-card" open>
+              <summary>Negócio e domínio</summary>
+              <ul>
+                <li>Quais decisões de negócio você assumiu?</li>
+                <li>Uma vaga é consumida quando a reserva é criada ou quando o pagamento é aprovado?</li>
+                <li>O preço da experiência pode mudar depois da reserva? Como você lidou com isso?</li>
+                <li>Quais são os estados possíveis da reserva e quais transições são inválidas?</li>
+              </ul>
+            </details>
+            <details class="accordion-card">
+              <summary>Consistência e concorrência</summary>
+              <ul>
+                <li>O que acontece se duas pessoas tentarem reservar a última vaga ao mesmo tempo?</li>
+                <li>Sua solução funcionaria com duas instâncias da aplicação rodando?</li>
+                <li>O que você garantiria no banco e o que deixaria na aplicação?</li>
+                <li>Como você testaria esse cenário?</li>
+              </ul>
+            </details>
+            <details class="accordion-card">
+              <summary>Idempotência e pagamento</summary>
+              <ul>
+                <li>O que acontece se o cliente clicar duas vezes em reservar ou pagar?</li>
+                <li>Como evitaria criar duas reservas ou dois pagamentos para a mesma intenção?</li>
+                <li>O que acontece se o pagamento for aprovado, mas a aplicação cair antes de atualizar a reserva?</li>
+                <li>Como integraria com um provedor real?</li>
+              </ul>
+            </details>
+            <details class="accordion-card">
+              <summary>Erros, produção, segurança e AI</summary>
+              <ul>
+                <li>Como sua API responde quando não há vagas, a reserva não existe ou o payload é inválido?</li>
+                <li>Como investigaria uma reserva paga que não aparece como confirmada?</li>
+                <li>Como impediria um cliente de consultar reserva de outro cliente?</li>
+                <li>Onde a AI ajudou, onde atrapalhou e como você revisou o código gerado?</li>
+              </ul>
+            </details>
+          </div>
+        </section>
+
+        <section class="content-section private-section" id="pontuacao" data-private>
+          <div class="section-heading">
+            <span class="eyebrow dark">Pontuação sugerida</span>
+            <h2>Rubrica total de 100 pontos.</h2>
+          </div>
+          <div class="score-table" role="table" aria-label="Pontuação sugerida">
+            <div role="row"><strong>Entendimento do problema e perguntas de negócio</strong><span>10</span></div>
+            <div role="row"><strong>Priorização e entrega</strong><span>10</span></div>
+            <div role="row"><strong>Modelagem de domínio</strong><span>15</span></div>
+            <div role="row"><strong>API e contrato HTTP</strong><span>10</span></div>
+            <div role="row"><strong>Persistência e consistência</strong><span>10</span></div>
+            <div role="row"><strong>Concorrência e disponibilidade</strong><span>15</span></div>
+            <div role="row"><strong>Pagamento e duplicidade/idempotência</strong><span>10</span></div>
+            <div role="row"><strong>Testes</strong><span>10</span></div>
+            <div role="row"><strong>Observabilidade, segurança e produção</strong><span>5</span></div>
+            <div role="row"><strong>Uso de AI e comunicação</strong><span>5</span></div>
+          </div>
+          <div class="band-grid">
+            <article><strong>0 a 39</strong><span>Ainda júnior ou abaixo do esperado.</span></article>
+            <article><strong>40 a 59</strong><span>Júnior em evolução.</span></article>
+            <article><strong>60 a 74</strong><span>Júnior forte ou pleno inicial.</span></article>
+            <article><strong>75 a 89</strong><span>Compatível com pleno.</span></article>
+            <article><strong>90 a 100</strong><span>Pleno forte ou sênior.</span></article>
+          </div>
+        </section>
+
+        <section class="content-section private-section" id="decisao" data-private>
+          <div class="section-heading">
+            <span class="eyebrow dark">Critério final de decisão</span>
+            <h2>A decisão deve combinar entrega, raciocínio e maturidade com AI.</h2>
+          </div>
+          <div class="decision-grid">
+            <article>
+              <strong>Mínimo esperado para pleno</strong>
+              <p>
+                Perguntas relevantes, fluxo principal funcional, domínio coerente, algumas transições controladas,
+                reconhecimento de concorrência, duplicidade, validação, erros, testes relevantes e boa explicação.
+              </p>
+            </article>
+            <article>
+              <strong>Indicadores de sênior</strong>
+              <p>
+                Antecipa concorrência, idempotência, consistência eventual, integração externa, observabilidade,
+                segurança e evolução arquitetural, mantendo simplicidade e execução.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section final-section" id="checklist">
+          <div class="section-heading">
+            <span class="eyebrow dark">Checklist do entrevistador</span>
+            <h2>Marque durante ou logo após a entrevista.</h2>
+          </div>
+          <div class="checklist" data-checklist="interviewer-final">
+            <label><input type="checkbox" /> Entendeu o problema antes de codar.</label>
+            <label><input type="checkbox" /> Recortou um MVP coerente para o tempo.</label>
+            <label><input type="checkbox" /> Modelou experiência, reserva, disponibilidade e pagamento com clareza.</label>
+            <label><input type="checkbox" /> Reconheceu risco de overbooking.</label>
+            <label><input type="checkbox" /> Reconheceu risco de duplicidade em reserva ou pagamento.</label>
+            <label><input type="checkbox" /> Tratou validações, erros e estados inválidos.</label>
+            <label><input type="checkbox" /> Escreveu ou explicou testes úteis.</label>
+            <label><input type="checkbox" /> Soube explicar o código e decisões sem depender cegamente da AI.</label>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <script src="./guide.js"></script>
+  </body>
+</html>

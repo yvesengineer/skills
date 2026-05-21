@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SDD na prática | Itaú</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="deck-shell" aria-live="polite">
+      <section class="topbar" aria-label="Controles da apresentação">
+        <div class="brand-lockup">
+          <img src="./Itaú_Unibanco_logo_2023.svg.png" alt="Itaú" />
+          <div>
+            <span class="eyebrow">Spec Driven Development</span>
+            <strong>SDD na prática</strong>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="icon-button" type="button" data-action="overview" aria-label="Abrir visão geral" title="Visão geral (O)">
+            <span aria-hidden="true">□</span>
+          </button>
+          <button class="icon-button" type="button" data-action="notes" aria-label="Abrir notas do apresentador" title="Notas (S)">
+            <span aria-hidden="true">≡</span>
+          </button>
+          <button class="icon-button" type="button" data-action="fullscreen" aria-label="Tela cheia" title="Tela cheia (F)">
+            <span aria-hidden="true">⛶</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="stage-wrap">
+        <article id="slide" class="slide" tabindex="-1"></article>
+      </section>
+
+      <footer class="control-bar" aria-label="Navegação">
+        <button class="nav-button" type="button" data-action="prev" aria-label="Slide anterior">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <div class="progress-area">
+          <div class="slide-meta">
+            <span id="chapterLabel">Abertura</span>
+            <span id="counter">1 / 17</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+        </div>
+        <button class="nav-button" type="button" data-action="next" aria-label="Próximo slide">
+          <span aria-hidden="true">›</span>
+        </button>
+      </footer>
+    </main>
+
+    <dialog id="notesDialog" class="notes-dialog" aria-labelledby="notesTitle">
+      <div class="dialog-head">
+        <div>
+          <span id="notesKicker" class="eyebrow">Notas do apresentador</span>
+          <h2 id="notesTitle"></h2>
+        </div>
+        <button class="icon-button" type="button" data-action="close-notes" aria-label="Fechar notas">×</button>
+      </div>
+      <div id="notesContent" class="notes-content"></div>
+    </dialog>
+
+    <dialog id="overviewDialog" class="overview-dialog" aria-labelledby="overviewTitle">
+      <div class="dialog-head">
+        <div>
+          <span class="eyebrow">Mapa da apresentação</span>
+          <h2 id="overviewTitle">17 slides para apresentar SDD com agentes</h2>
+        </div>
+        <button class="icon-button" type="button" data-action="close-overview" aria-label="Fechar visão geral">×</button>
+      </div>
+      <div id="overviewGrid" class="overview-grid"></div>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
